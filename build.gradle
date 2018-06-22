@@ -1,0 +1,32 @@
+group 'xjoxjoxjo'
+version '1.0-SNAPSHOT'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '4.2.1'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.inject:guice:4.1.0'
+    compile 'com.google.inject.extensions:guice-servlet:4.1.0'
+    compile 'com.google.guava:guava:23.2-jre'
+    compile 'javax.servlet:javax.servlet-api:4.0.0'
+    compile 'org.slf4j:slf4j-api:1.8.0-alpha2'
+
+
+    compile group: 'com.sun.jersey.contribs', name: 'jersey-guice', version: '1.19.4'
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0'
+    compile group: 'org.eclipse.jetty', name: 'jetty-http', version: '9.4.7.v20170914'
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.4.7.v20170914'
+    compile group: 'org.eclipse.jetty', name: 'jetty-servlet', version: '9.4.7.v20170914'
+}
